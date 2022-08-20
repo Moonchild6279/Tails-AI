@@ -1,6 +1,8 @@
 # Tails AI for Orbitnaut Framework
 A addon for the Sonic Gamemaker Engine "Orbinaut Framework" developed by Triangly and MicG.
 
+Not yet finished. this is only for demonstration purposes 
+
 ![](Images/Showcase1.gif)
 
 # Overview
