@@ -1,4 +1,4 @@
-These script is formatted in a C-Like Format in a CPP file format, DO NOT TRY TO IMPORT THESE DIRECTLY!
+These scripts is formatted in a C-Like Format in a CPP file format, DO NOT TRY TO IMPORT THESE DIRECTLY!
 
 Variables Setup
 
