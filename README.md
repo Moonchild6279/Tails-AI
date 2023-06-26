@@ -1,6 +1,3 @@
-Warning! This is outdated I'm currently refining! STAND BY!
-
-
 # Disclaimer
 This is not a engine nor a framework, it is written code/scripts taken from the 2013 Christian Whitehead Version of Sonic 1/2, and then rewritten to work with the GameMaker Language. (For the Pre-built Package, Base Code will be in sudocode) Though you are free to edit it in your preferred coding language.
 
