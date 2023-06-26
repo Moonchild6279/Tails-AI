@@ -7,7 +7,7 @@ Also, For said Pre-built Package, you ***must backup your work as it assumes you
 - Scripts for Handling Loading/Saving
 - ETC
 
-# Tails AI for Orbitnaut Framework
+# Tails AI (Pre-built Package Included For Orbinaut Framework V3)
 A addon for the Sonic Gamemaker Engine "Orbinaut Framework" developed by Triangly and MicG.
 
 Base Scripts Provided! Orbinaut Pre-Built Package Coming Soon (In a day or two!)
