@@ -1,18 +1,30 @@
 Warning! This is outdated I'm currently refining! STAND BY!
 
+
+# Disclaimer
+This is not a engine nor a framework, it is written code/scripts taken from the 2013 Christian Whitehead Version of Sonic 1/2, and then rewritten to work with the GameMaker Language. (For the Pre-built Package, Base Code will be in sudocode) Though you are free to edit it in your preferred coding language.
+
+Also, For said Pre-built Package, you ***must backup your work as it assumes you never edited the following***
+- Character Code
+- Player Code
+- Scripts for Handling Loading/Saving
+- ETC
+
 # Tails AI for Orbitnaut Framework
 A addon for the Sonic Gamemaker Engine "Orbinaut Framework" developed by Triangly and MicG.
 
-Not yet finished. this is only for demonstration purposes 
+Base Scripts Provided! Orbinaut Pre-Built Package Coming Soon (In a day or two!)
 
 ![](Images/Showcase1.gif)
 
 # Overview
-Have you ever wanted to have Tails, Knuckles, Sonic, Or even your own characters follow you around in wacky stages in your very own Sonic fangame? Well now you
-can with this little addon I made that basically replicates the AI seen from Sonic 2, Sonic 3 and to some extent, Sonic Mania. 
+That goofy little fox! Want that silly little fella following ya adventures? In your own game? Perphaps maybe **more**?
+maybe even having Knuckles tag along or you *own* character? Well in this github repo, you can download the base scripts to import into your own game or use an exclusive pre-built
+package to make that happened!
+
+- 90% Accurrate to the Retroscript Code
+- Pre-built Package For Orbinaut Framework v3
+- GoofBall! Whats not the love :)
 
 ![](Images/Showcase2.gif)
 
-# Little Disclaimer
-This is coded by me without the use of the actual 68k ASM code as I can't read it. Nor the decompliation of Sonic Mania. However if you are someone that can 
-understand the 68k ASM code, I would be happy to work with you! if not, that's fine.
