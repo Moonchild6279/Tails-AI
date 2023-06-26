@@ -25,3 +25,12 @@ package to make that happened!
 
 ![](Images/Showcase2.gif)
 
+# Changelog
+
+Version 1.0
+- Inital Release
+- Base Scripts Presented
+- Prebuilt Package for OF will be delay a bit by a day or two
+- Will added other features (Player Switching, Carrying, etc) in a later date!
+
+
