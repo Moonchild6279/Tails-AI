@@ -28,7 +28,7 @@ package to make that happened!
 # Changelog
 
 Version 0.5
-- Inital Alpha Release
+- Alpha Release
 - Base Scripts Presented
 - Prebuilt Package for OF will be delay a bit by a day or two
 - Will added other features (Player Switching, Carrying, etc) in a later date!
