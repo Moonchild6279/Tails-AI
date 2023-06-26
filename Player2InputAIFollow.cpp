@@ -14,7 +14,7 @@
 			var DistanceCheck =  targetMainPlayerPosX - PosX;
 			var CheckGrav = MainPlayer.Grounded;
 			var HeightCheck = PosY - targetMainPlayerPosY;
-			Player2GetDelayedInput(MainPlayer,DelayAmount);
+			Player2GetDelayedInput();
 	
 			
 		if !MainPlayer.Death
