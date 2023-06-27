@@ -1,7 +1,9 @@
 	// ----------------------------------
 	/*
-	Base code taken from Moonchild
-	Reformat by javainterface
+	Base code taken from Sonic 1 2013 By Christain Whitehead
+	Decomp by Rubberduckycooly
+	Initial Reformat by Moonchild
+	Cleanup / Second Reformat by javainterface
 	*/
 	// ----------------------------------
 
