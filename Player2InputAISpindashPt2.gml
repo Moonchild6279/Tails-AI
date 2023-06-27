@@ -3,7 +3,7 @@
 	Base code taken from Sonic 1 2013 By Christain Whitehead
 	Decomp by Rubberduckycooly
 	Reformat by Moonchild
-		Cleanup by javainterface
+	Cleanup by javainterface
 	*/
 	// ----------------------------------
 
