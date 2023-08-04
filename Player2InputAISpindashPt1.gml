@@ -1,34 +1,36 @@
-	// ----------------------------------
-	/*
-	Base code taken from Sonic 1 2013 By Christain Whitehead
-	Decomp by Rubberduckycooly
-	Initial Reformat by Moonchild
-	Cleanup / Second Reformat by javainterface
-	*/
-	// ----------------------------------
-
-	// Stop all active inputs!
+// Script assets have changed for v2.3.0 see
+// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+function Player2InputAISpindashPt1(){
 	InputUp = false;
 	InputDown = false;
 	InputLeft = false;
 	InputRight = false;
 	PressedInputABC = false;
 	InputABC = false;
+	if GroundLock == 0
+	{
+		if Grounded == true
+		{
+			if Xsp < 0.25
+			{
+				if Xsp > -0.25
+				{
+					autoJumpTimer = 1
+					if Animation != AnimSpindash
+					{
+						if PosX < targetLeaderPosX
+						{
+							Facing = FlipRight;
+							}
+						else{
+							Facing = FlipLeft;
+						}
 
-
-	// Crouch, then get into spindash state
-	if(GroundLock == 0 and Grounded == true and Xsp < 0.25 and Xsp > -0.25) {
-		// -> From here Move onto Part 2!
-
-		// Face the same direction as our Main Player, Also Start "Jumping"(Pressing the A button)
-		autoJumpTimer = 1
-		if(Animation != AnimSpindash) {
-			if(PosX < targetLeaderPosX) {
-				Facing = FlipRight
-			} else {
-				Facing = FlipLeft
+						InputDown = true;
+						p2InputFunction = 2;
+					}
+				}
 			}
-
-			InputDown = true
 		}
 	}
+}

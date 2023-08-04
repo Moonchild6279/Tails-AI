@@ -1,28 +1,25 @@
-	// ----------------------------------
-	/*
-	Base code taken from Sonic 1 2013 By Christain Whitehead
-	Decomp by Rubberduckycooly
-	Reformat by Moonchild
-	Cleanup by javainterface
-	*/
-	// ----------------------------------
-
-	// if we are under than 64 in our timer
-
-	if(autoJumpTimer < 64) {
-		// Press Down if we aren't, than Spindash every other 15 frames.
-		InputDown = true
+// Script assets have changed for v2.3.0 see
+// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+function Player2InputAISpindashPt2(){
+if autoJumpTimer < 64
+{
+		InputDown = true;
 		var temp0 = autoJumpTimer & 15;
-		if(temp0 == 0) {
+		if temp0 == 0
+		{
 			PressedInputABC = true
-		} else {
+		}
+		else
+		{
 			PressedInputABC = false
 		}
 		autoJumpTimer++
-	} else {
-		// Let go of A button and Down Button, Return to normal Condition
+}
+	else
+	{
 		autoJumpTimer = 0;
 		InputDown = false;
 		PressedInputABC = false;
-		// -> Revert back to Following state `Player2InputAIFollow()`
+		p2InputFunction = 0;
 	}
+}

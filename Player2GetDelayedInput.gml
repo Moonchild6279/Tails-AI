@@ -1,78 +1,84 @@
+// Script assets have changed f| v2.3.0 see
+// https://help.yoyogames.com/hc/en-us/articles/360005277377 f| m|e inf|mation
+function Player2GetDelayedInput(DelayAmount){
+	
 	// ----------------------------------
 	/*
 	Base code taken from Sonic 1 2013 By Christain Whitehead
 	Decomp by Rubberduckycooly
 	Reformat by Moonchild
-	Cleanup by javainterface
 	*/
 	// ----------------------------------	
 
 		
-	// Do some math to grab our Player Inputs and store it in our Variables
+		// Do some math to grab our Player Inputs and store it in our Variables
 
-	Player2_stateUp = Player2_stateUp << 1 | MainPlayer.InputUp & 0xffff;
-	Player2_stateDown = Player2_stateDown << 1 | MainPlayer.InputDown & 0xffff;
-	Player2_stateLeft = Player2_stateLeft << 1 | MainPlayer.InputLeft & 0xffff;
-	Player2_stateRight = Player2_stateRight << 1 | MainPlayer.InputRight & 0xffff;
-	Player2_stateJumpPress = Player2_stateJumpPress << 1 | MainPlayer.PressedInputABC & 0xffff ;
-	Player2_stateJumpHold = Player2_stateJumpHold << 1 | MainPlayer.InputABC & 0xffff ;
-	
-	//Now... Do more math to convert this to actual inputs to output back! 
-	//there is a big butt plug in my ass
-
-	var DelayedUp = Player2_stateUp >> DelayAmount;		
-	InputUp = DelayedUp;
-
-	var DelayedDown = Player2_stateDown >> DelayAmount;
-	InputDown = DelayedDown;
-
-	var DelayedLeft = Player2_stateLeft >> DelayAmount;
-	InputLeft = DelayedLeft;
-
-	var DelayedRight = Player2_stateRight >> DelayAmount;
-	InputRight = DelayedRight;
-
-	var DelayedJmpPress = Player2_stateJumpPress >> DelayAmount;
-	PressedInputABC = DelayedJmpPress;
-
-	var DelayedJmpHold = Player2_stateJumpHold >> DelayAmount;
-	InputABC = DelayedJmpHold;
-
-	if(!MainPlayer.Death) {
-
-		// Increment Index, Limit to 15 (Counting starts at 0, so its 16)
+		Player2_stateUp = Player2_stateUp << 1 | Leader.InputUp & 0xffff;
+		Player2_stateDown = Player2_stateDown << 1 | Leader.InputDown & 0xffff;
+		Player2_stateLeft = Player2_stateLeft << 1 | Leader.InputLeft & 0xffff;
+		Player2_stateRight = Player2_stateRight << 1 | Leader.InputRight & 0xffff;
+		Player2_stateJumpPress = Player2_stateJumpPress << 1 | Leader.PressedInputABC & 0xffff ;
+		Player2_stateJumpHold = Player2_stateJumpHold << 1 | Leader.InputABC & 0xffff ;
 		
-		Player2_PosID++;
-		if(Player2_PosID > 15) { Player2_PosID = 0; }
-
-		// Start Storing Player Positions into our arrays
 		
-		Player2_leaderPosBufferX[| Player2_PosID] = MainPlayer.PosX;
-		Player2_leaderPosBufferY[| Player2_PosID] = MainPlayer.PosY;
+		//Now... Do more math to convert this to actual inputs to output back! 
 
-		if(MainPlayer.Grounded == false) {
-			// Store array values into our variables to set Main Player position Data
+		var DelayedUp = Player2_stateUp >> DelayAmount;		
+		InputUp = DelayedUp;
 
-			targetLeaderPosX = Player2_leaderPosBufferX[| Player2_PosID];
-			targetLeaderPosY = Player2_leaderPosBufferY[| Player2_PosID];
-		} else {
-			// Store values from our Main Player Directly into variables
+		var DelayedDown = Player2_stateDown >> DelayAmount;
+		InputDown = DelayedDown;
 
-			targetLeaderPosX = Leader.PosX;
-			targetLeaderPosY = Leader.PosY;
+		var DelayedLeft = Player2_stateLeft >> DelayAmount;
+		InputLeft = DelayedLeft;
+
+		var DelayedRight = Player2_stateRight >> DelayAmount;
+		InputRight = DelayedRight;
+
+		var DelayedJmpPress = Player2_stateJumpPress >> DelayAmount;
+		PressedInputABC = DelayedJmpPress;
+
+		var DelayedJmpHold = Player2_stateJumpHold >> DelayAmount;
+		InputABC = DelayedJmpHold ;
+		
+		
+
+			
+			if (!Leader.Death)
+			{
+			
+			Player2_PosID++
+			
+			if(Player2_PosID > 15)
+			{
+				Player2_PosID = 0;
+			}
+			
+			Player2_leaderPosBufferX[| Player2_PosID] = Leader.PosX;
+			Player2_leaderPosBufferY[| Player2_PosID] = Leader.PosY;
+
+			if (Leader.Grounded = false)
+			{
+				targetLeaderPosX = Player2_leaderPosBufferX[| Player2_PosID];
+				targetLeaderPosY = Player2_leaderPosBufferY[| Player2_PosID];
+			}
+			else
+			{
+				targetLeaderPosX = Leader.PosX;
+				targetLeaderPosY = Leader.PosY;
+			}
 		}
-	} else {
-		// Reverse Index Increment
-
+	else
+	{
 		var temp0 = Player2_PosID;
 		temp0--;
 		if temp0 < 0
 		{
 			temp0 += 16;
 		}
-		// Set Varibles to values from array at the reversed index
-	
-		targetLeaderPosX = Player2_leaderPosBufferX[| temp0];
-		targetLeaderPosY = Player2_leaderPosBufferY[| temp0];
+
+				targetLeaderPosX = Player2_leaderPosBufferX[| temp0];
+				targetLeaderPosY = Player2_leaderPosBufferY[| temp0];
 	}
 
+}

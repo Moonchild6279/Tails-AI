@@ -1,72 +1,103 @@
-
-	// ----------------------------------
-	/*
-	Base code taken from Sonic 1 2013 By Christain Whitehead
-	Decomp by Rubberduckycooly
-	Reformat by Moonchild
-	Cleanup by javainterface
-	*/
-	// ----------------------------------	
-
-	// Exit if we're not respawing
-	if(!IsRespawning) { return; }
-	
-	// Start getting delayed inputs
-	
-	Player2GetDelayedInput();
-
-	// Change Animation Base on gravity (Wheather we're underwater or not)
-
-	Animation = AnimSwim;
-	if(Grv == 0.21875) {
-		Animation = AnimFly;
+// Script assets have changed for v2.3.0 see
+// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+function Player2FlyToPlayer(DelayAmount,SetAnim0,SetAnim1 = SetAnim0){
+	if !IsRespawning
+	{
+		return;
 	}
 	
-	// Init Varaibles
+	
+	Player2GetDelayedInput(DelayAmount);
+
+	if Grv = 0.21875
+	{
+		Animation = SetAnim0;
+	}
+	else
+	{
+	
+		Animation = SetAnim1;
+	}
 
 	var temp0 = (targetLeaderPosX - PosX) >> 4;
 	var temp1 = temp0;
 	//temp0 = temp0 >> 4;
 
-	// Move X Position of AI Based on Distance
-
-	if(PosX < targetLeaderPosX) {
+	if PosX < targetLeaderPosX
 		Facing = FlipRight;
+		if temp0 > 12
+		{
+			temp0 = 12;
+		}
 
-		temp0 = min(temp0, 12);
-		temp0 += max(Leader.Xsp, 0) + 1;
+		if Leader.Xsp > 0
+		{
+			temp0 += Leader.Xsp;
+		}
 
-		if(temp0 > temp1) {
+		temp0 += 1;
+		if temp0 > temp1
+		{
 			temp0 = temp1;
 			temp1 = 0;
 		}
-	} else {
+	else
+	{
 		Facing = FlipLeft;
+		if temp0 < -12
+		{
+			temp0 = -12;
+		}
 
-		temp0 = max(temp0, -12)
-		temp0 += min(Leader.Xsp, 0) - 1; 
+		if Leader.Xsp < 0
+		{
+			temp0 += Leader.Xsp;
+		}
 
-		if(temp0 < temp1) {
+		temp0 -= 1
+		if temp0 < temp1
+		{
 			temp0 = temp1;
 			temp1 = 0;
 		}
 	}
 
-	// Move Y Position of AI Based on Distance
-
 	PosX += temp0;
-	if(PosY < targetLeaderPosY) { PosY += 1; }
-	if(PosY > targetLeaderPosY) { PosY -= 1; }
+	if PosY < targetLeaderPosY
+	{
+		PosY += 1;
+	}
 
-	// Once Close enough to Player, Return from Spawning State
+	if PosY > targetLeaderPosY
+	{
+		PosY -= 1;
+	}
 
-	if(Leader.Death or Leader.Drown or Leader.ForcedRoll or temp1 != 0) { return }
+	//if Player.type != TypeName[Death Event]
+		if Leader.Death != true
+		{
+			if Leader.Drown != true
+			{
+				if Leader.ForcedRoll != true
+				{
+					if temp1 == 0
+					{
+						temp0 = targetLeaderPosY - PosY;
+						if temp0 < 0
+						{
+							temp0 = temp0 * -1
+						}	
+
+						if temp0 < 2
+						{
+							PlayerReset();
+							PlayerPhysicsHandle();
+							Layer			 = Leader.Layer;
+							IsRespawning     = false;
+						}
+					}
+				}
+			}
+		}
 	
-	// Make the Y Position Absolute to Prevent Negatives
-
-	temp0 = abs(targetLeaderPosY - PosY);
-
-	// -> Reset Player Values Here
-	// Stop Respawning
-
-	if temp0 < 2 { IsRespawning = false; }
+}
