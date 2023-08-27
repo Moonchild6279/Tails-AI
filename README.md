@@ -10,8 +10,6 @@ Also, For said Pre-built Package, you ***must backup your work as it assumes you
 # Tails AI
 Available as an addon for the Sonic Gamemaker Engine "Orbinaut Framework" developed by Triangly and MicG.
 
-Base Scripts Provided! Orbinaut Pre-Built Package Coming Soon (In a day or two!)
-
 ![](Images/Showcase1.gif)
 
 # Overview
@@ -20,7 +18,7 @@ maybe even having Knuckles tag along or you *own* character? Well in this github
 package to make that happened!
 
 - 90% Accurrate to the Retroscript Code
-- Pre-built Package For Orbinaut Framework v3
+- Pre-built Package For Orbinaut Framework v1.3
 - GoofBall! Whats not the love :)
 
 ![](Images/Showcase2.gif)
